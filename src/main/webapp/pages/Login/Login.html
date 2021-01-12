@@ -1,0 +1,69 @@
+<wm-page layouttype="one-column" columns="1" name="page1" pagetitle="Login">
+    <wm-content name="content1" height="100%">
+        <wm-page-content columnwidth="12" name="column1" padding="0px" class="login">
+            <wm-container class="bg-primary" width="100%" height="100%" backgroundimage="resources/images/imagelists/login-bg.jpg" backgroundrepeat="no-repeat" backgroundposition="0 0" backgroundsize="100% 100%" backgroundattachment="fixed" name="loginPageContainer">
+                <wm-layoutgrid name="loginGrid" height="100%">
+                    <wm-gridrow name="gridrow7" height="15%">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn10_2"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow6_1">
+                        <wm-gridcolumn columnwidth="1" name="gridcolumn10_4"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn10_1" horizontalalign="center" class="col-xs-12" padding="unset unset 2em unset">
+                            <wm-picture name="picture1" picturesource="resources/images/logos/logo_tirea_transparente_BLANCOv2.png" pictureplaceholder="resources/images/logos/logo_tirea_transparente_BLANCOv2.png" height="6em" margin="2em unset unset unset"></wm-picture>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="7" name="gridcolumn11"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="loginGridRow">
+                        <wm-gridcolumn columnwidth="1" name="gridcolumn10_3"></wm-gridcolumn>
+                        <wm-gridcolumn name="loginContentColumn" columnwidth="4" class="col-xs-10  col-md-4">
+                            <wm-container name="container1" class="panel" backgroundcolor="rgba(255,255,255,0.8)" color="#807f7f">
+                                <wm-login name="loginForm" title="" autocomplete="nofill">
+                                    <wm-label padding="1em 2.5em unset 6em" name="label3" caption="Iniciar Sesión" fontsize="22" color="#434343" fontweight="bold"></wm-label>
+                                    <wm-form name="form1">
+                                        <wm-layoutgrid name="layoutgrid2">
+                                            <wm-gridrow name="gridrow2">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn4" padding="unset unset 1em unset">
+                                                    <wm-container class="input-group" name="container3">
+                                                        <wm-container class="input-group-addon" name="container4">
+                                                            <wm-icon name="icon1" iconclass="wi wi-user"></wm-icon>
+                                                        </wm-container>
+                                                        <wm-text placeholder="Nombre de Usuario" name="j_username" class="app-login-username" width="100%" autocomplete="false" autocorrect="off" autocapitalize="off" updateon="default" required="true"></wm-text>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow3">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn7" padding="unset unset 1em unset">
+                                                    <wm-container class="input-group" name="container3">
+                                                        <wm-container class="input-group-addon" name="container6" horizontalalign="left">
+                                                            <wm-icon name="icon1" iconclass="wi wi-key"></wm-icon>
+                                                        </wm-container>
+                                                        <wm-text type="password" name="j_password" placeholder="Contraseña" class="app-login-passworØd" width="100%" autocomplete="true" autocorrect="off" autocapitalize="off" updateon="default" required="true"></wm-text>
+                                                        <wm-container name="container9" class="input-group-addon" horizontalalign="center">
+                                                            <wm-anchor margin="unset 0em" name="seePassword" caption="" iconclass="fa fa-eye-slash" iconposition="left" on-click="seePasswordClick($event, widget)"></wm-anchor>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow6">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn14" class="col-xs-12">
+                                                    <wm-checkbox caption="Recuérdame" name="j_rememberme"></wm-checkbox>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow4">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn10">
+                                                    <wm-button type="submit" caption="Ingresar" width="100%" class="app-login-button btn-primary" name="loginButton" fontsize="1.2" fontunit="em"></wm-button>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-form>
+                                </wm-login>
+                            </wm-container>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn9" class="col-xs-1  col-md-4"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="3" name="gridcolumn13"></wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

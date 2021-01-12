@@ -1,0 +1,6 @@
+{
+  "id" : "DESA",
+  "type" : "DataService",
+  "packageNames" : [ "es.tirea.wavemaker.consultaFacturas.desa" ],
+  "title" : "DESA"
+}

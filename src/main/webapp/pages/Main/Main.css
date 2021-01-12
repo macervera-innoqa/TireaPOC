@@ -1,0 +1,12 @@
+.wm-app .pincharTabla{
+    cursor: pointer;
+}
+
+.wm-app .heading {
+    margin-top: 25px;
+}
+
+.wm-app .h3-changed{
+    font-size: 17px;
+    display: inline-block;
+}

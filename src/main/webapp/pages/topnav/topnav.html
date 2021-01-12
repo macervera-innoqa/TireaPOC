@@ -1,0 +1,18 @@
+<wm-partial name="topnav" type="topnav">
+    <wm-navbar name="navbar1">
+        <wm-nav name="leftTopLinks" type="navbar" class="navbar-left" padding="unset unset unset 15px">
+            <wm-nav-item name="list_home">
+                <wm-anchor caption="Inicio" name="homeLink" iconclass="" on-click="Actions.goToPage_Main.invoke()"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="list_services">
+                <wm-anchor caption="Últimas Facturas" name="orderLink" iconclass="" on-click="Actions.goToPage_ultimas_facturas.invoke()"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="list_services">
+                <wm-anchor caption="Filtrar Facturas" name="orderLink" iconclass="" on-click="Actions.goToPage_filtro_facturas.invoke()"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="list_services">
+                <wm-anchor caption="Informes" name="orderLink" iconclass="" on-click="Actions.goToPage_informe_facturas.invoke()"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+    </wm-navbar>
+</wm-partial>

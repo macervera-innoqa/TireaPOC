@@ -1,0 +1,113 @@
+{
+  "description" : null,
+  "methods" : {
+    "getDownloadPdf" : [ {
+      "url" : {
+        "value" : "/downloadPdf",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "idFactura" : {
+          "name" : {
+            "value" : "idFactura",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "getDownloadPdfAsInLine" : [ {
+      "url" : {
+        "value" : "/downloadPdfAsInLine",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "idFactura" : {
+          "name" : {
+            "value" : "idFactura",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "getDownloadXml" : [ {
+      "url" : {
+        "value" : "/downloadXml",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "idFactura" : {
+          "name" : {
+            "value" : "idFactura",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "getDownloadXmlAsInLine" : [ {
+      "url" : {
+        "value" : "/downloadXmlAsInLine",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "idFactura" : {
+          "name" : {
+            "value" : "idFactura",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ]
+  }
+}

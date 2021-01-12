@@ -1,0 +1,21 @@
+{
+  "messages" : {
+    "LABEL_LOGIN_TITLE" : "Iniciar Sesión",
+    "LABEL_LOGIN" : "Ingresar",
+    "LABEL_REMEMBER_ME" : "Recuérdame",
+    "LABEL_PASSWORD" : "Contraseña",
+    "LABEL_USERNAME" : "Nombre de Usuario",
+    "LABEL_TOTAL_RECORDS" : "Total facturas",
+    "MESSAGE_LOADING" : "Cargando...",
+    "MESSAGE_NO_DATA" : "No se encontraron datos."
+  },
+  "formats" : {
+    "date" : "dd-MMM-yyyy",
+    "time" : "H:mm:ss"
+  },
+  "files" : {
+    "angular" : "es",
+    "fullCalendar" : "es",
+    "moment" : "es"
+  }
+}

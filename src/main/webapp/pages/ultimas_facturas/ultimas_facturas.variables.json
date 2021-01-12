@@ -1,0 +1,85 @@
+{
+  "downloadPdfVariable" : {
+    "_id" : "wm-downloadPdfVariable-wm.ServiceVariable-1608113758136",
+    "name" : "downloadPdfVariable",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "idFactura",
+      "value" : "bind:Widgets.FacturasClienteTable.selecteditem.idFactura",
+      "type" : "integer"
+    } ],
+    "type" : "com.wavemaker.runtime.file.model.DownloadResponse",
+    "service" : "FileService",
+    "operation" : "getDownloadPdfAsInLine",
+    "operationId" : "FileController_getDownloadPdfAsInLine",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "File"
+  },
+  "downloadXmlVariable" : {
+    "_id" : "wm-downloadXmlVariable-wm.ServiceVariable-1608113777254",
+    "name" : "downloadXmlVariable",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "idFactura",
+      "value" : "bind:Widgets.FacturasClienteTable.selecteditem.idFactura",
+      "type" : "integer"
+    } ],
+    "type" : "com.wavemaker.runtime.file.model.DownloadResponse",
+    "service" : "FileService",
+    "operation" : "getDownloadXmlAsInLine",
+    "operationId" : "FileController_getDownloadXmlAsInLine",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "File"
+  },
+  "facturasVariable" : {
+    "_id" : "wm-facturasVariable-wm.ServiceVariable-1608029525124",
+    "name" : "facturasVariable",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "all",
+      "value" : true,
+      "type" : "boolean"
+    }, {
+      "isList" : true,
+      "target" : "idCliente",
+      "value" : "Todos",
+      "type" : "string"
+    } ],
+    "type" : "es.tirea.wavemaker.consultaFacturas.desa.models.query.FacturasClienteResponse",
+    "service" : "DESA",
+    "operation" : "executeFacturasCliente",
+    "operationId" : "QueryExecutionController_executeFacturasCliente",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}

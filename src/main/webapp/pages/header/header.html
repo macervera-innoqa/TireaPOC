@@ -1,0 +1,53 @@
+<wm-partial name="header" type="header">
+    <wm-layoutgrid name="headerlayout">
+        <wm-gridrow name="headerrow">
+            <wm-gridcolumn name="headerleft" verticalalign="middle" columnwidth="10">
+                <wm-picture picturesource="resources/images/logos/logo_tirea_transparente_BLANCOv2.png" name="AppLogo" margin="unset unset unset 10px" pictureplaceholder="resources/images/logos/logo_tirea_transparente_BLANCOv2.png" width="200"></wm-picture>
+            </wm-gridcolumn>
+            <wm-gridcolumn name="headerright" horizontalalign="right" verticalalign="middle" columnwidth="2" padding="1em 1em unset unset">
+                <wm-nav type="pills" autoclose="outsideClick" name="nav1" layout="justified">
+                    <wm-nav-item name="nav_item3" accessroles="Everyone">
+                        <wm-anchor name="anchor3" iconclass="wi wi-settings fa-2x" caption="" accessroles="TIREA" on-click="Actions.goToPage_administracion.invoke()" iconposition="left" padding="unset 5px unset unset" hint="Administración"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="nav_item1">
+                        <wm-anchor caption="" name="anchor1" iconclass="wi wi-help-outline fa-2x" on-click="Widgets.dialogHelp.open()" hint="Ayuda"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="nav_item4">
+                        <wm-popover popoverwidth="240" popoverheight="100" name="popover1" iconclass="" caption="" contentsource="inline" iconurl="bind:&quot;https://eu.ui-avatars.com/api/?background=37489C&amp;rounded=true&amp;size=128&amp;color=ffffff&amp;name=&quot; + Variables.loggedInUser.dataSet.name"
+                            iconwidth="32" iconheight="32" hint="Menú usuario">
+                            <wm-layoutgrid name="layoutgrid1">
+                                <wm-gridrow name="gridrow1">
+                                    <wm-gridcolumn columnwidth="2" name="gridcolumn1" horizontalalign="center">
+                                        <wm-popover popoverwidth="240" popoverheight="120" margin="unset 0.5em" name="popover1" iconurl="bind:&quot;https://eu.ui-avatars.com/api/?background=37489C&amp;rounded=true&amp;size=128&amp;color=ffffff&amp;name=&quot; + Variables.loggedInUser.dataSet.name"
+                                            iconwidth="32" iconheight="32" caption="" padding="0.7em unset unset unset"></wm-popover>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn2">
+                                        <wm-label padding="0.4em unset unset 1em" display="block" name="label1" caption="bind:Variables.loggedInUser.dataSet.name" required="false"></wm-label>
+                                        <wm-label padding="unset unset unset 1em" display="block" caption="bind:Variables.loggedInUser.dataSet.roles[0]" name="label2"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridcolumn columnwidth="10" name="gridcolumn9" horizontalalign="left"></wm-gridcolumn>
+                                <wm-gridrow name="gridrow6" padding="unset unset 1em unset">
+                                    <wm-gridcolumn columnwidth="2" name="gridcolumn12"></wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="10" name="gridcolumn8"></wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow8">
+                                    <wm-gridcolumn columnwidth="2" name="gridcolumn14"></wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="10" name="gridcolumn10">
+                                        <wm-anchor padding="unset unset unset 1em" caption="Cerrar sesión" iconclass="wi wi-exit-to-app" on-click="Actions.logoutAction.invoke()" name="closeSesionAnchor"></wm-anchor>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-popover>
+                    </wm-nav-item>
+                </wm-nav>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Ayuda" iconclass="wi wi-help-outline" name="dialogHelp">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="Cerrar" on-click="closeDialog()" name="button1"></wm-button>
+        </wm-dialogactions>
+        <wm-label padding="unset 0.5em" name="label7" caption="Esta funcionalidad no esta desarrollada." fontsize="14"></wm-label>
+    </wm-dialog>
+</wm-partial>

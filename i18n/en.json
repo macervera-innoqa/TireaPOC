@@ -1,0 +1,18 @@
+{
+  "messages" : {
+    "LABEL_LOGIN_TITLE" : "Login",
+    "LABEL_LOGIN" : "Login",
+    "LABEL_REMEMBER_ME" : "Remember me",
+    "LABEL_PASSWORD" : "Password",
+    "LABEL_USERNAME" : "Username"
+  },
+  "formats" : {
+    "date" : "MMM d, yyyy",
+    "time" : "h:mm:ss a"
+  },
+  "files" : {
+    "angular" : "en",
+    "fullCalendar" : null,
+    "moment" : null
+  }
+}

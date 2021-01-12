@@ -1,0 +1,29 @@
+{
+  "description" : null,
+  "methods" : {
+    "getClientes" : [ {
+      "url" : {
+        "value" : "/clientes",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : { }
+    } ],
+    "getClientesSinTodos" : [ {
+      "url" : {
+        "value" : "/clientesSinTodos",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : { }
+    } ]
+  }
+}

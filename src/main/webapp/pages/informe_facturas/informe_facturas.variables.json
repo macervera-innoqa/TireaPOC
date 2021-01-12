@@ -1,0 +1,55 @@
+{
+  "facturaGraphVariable" : {
+    "_id" : "wm-facturaGraphVariable-wm.ServiceVariable-1607528906015",
+    "name" : "facturaGraphVariable",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "all",
+      "value" : true,
+      "type" : "boolean"
+    }, {
+      "isList" : true,
+      "target" : "idCliente",
+      "value" : "Todos",
+      "type" : "string"
+    } ],
+    "type" : "es.tirea.wavemaker.consultaFacturas.desa.models.query.FacturaGraphResponse",
+    "service" : "DESA",
+    "operation" : "executeFacturaGraph",
+    "operationId" : "QueryExecutionController_executeFacturaGraph",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 0,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "userClientsVariable" : {
+    "_id" : "wm-userClientsVariable-wm.ServiceVariable-1607942921524",
+    "name" : "userClientsVariable",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "string",
+    "service" : "logedUserInfo",
+    "operation" : "getClientes",
+    "operationId" : "LogedUserInfoController_getClientes",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "LogedUserInfo"
+  }
+}

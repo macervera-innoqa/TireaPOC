@@ -1,0 +1,71 @@
+<wm-page pagetitle="Filtro Facturas" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                        <wm-panel iconclass="" autoclose="outsideClick" title="" name="filterPanel" badgetype="default" helptext="Aplicar filtros de búsqueda básicos o avanzados a la selección de facturas" collapsible="false" enablefullscreen="false" closable="false"
+                            expanded="true">
+                            <wm-panel-footer name="panel_footer1">
+                                <wm-livefilter name="FacturasFilter" title="" dataset="bind:Variables.facturasVariable.dataSet" captionalign="left" captionposition="top" iconclass="" pagesize="10" show="false" collapsible="false">
+                                    <wm-layoutgrid columns="2" name="layoutgrid3" show="true">
+                                        <wm-gridrow name="gridrow10">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn10">
+                                                <wm-filter-field name="fechaFactura" field="fechaFactura" displayname="Fecha Factura" widget="date" is-range="true" type="timestamp" is-primary-key="false" generator="assigned" show="true" key="fechaFactura"
+                                                    datepattern="dd-MMM-yyyy" placeholder="Fecha mínima" maxplaceholder="Fecha máxima" maxdate="CURRENT_DATE"></wm-filter-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn11"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow11">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn12">
+                                                <wm-filter-field name="idCliente" field="idCliente" displayname="Cliente" widget="select" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" key="idCliente" placeholder="Seleccione un cliente"
+                                                    matchmode="exact" dataset="bind:Variables.clientesVariable.dataSet" datafield="All Fields"></wm-filter-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                                                <wm-filter-field name="idServicio" field="idServicio" displayname="Servicio" widget="select" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" key="idServicio" placeholder="Seleccione un servicio"
+                                                    matchmode="exact"></wm-filter-field>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                    <wm-filter-field name="espacio" field="espacio" displayname="Espacio" show="false" type="string" widget="text" inputtype="text" is-range="false" key="espacio" placeholder="Enter value" matchmode="startignorecase"></wm-filter-field>
+                                </wm-livefilter>
+                            </wm-panel-footer>
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn6" horizontalalign="right">
+                                        <wm-button class="btn-primary" caption="Mostrar Filtros" type="button" margin="unset 0.8em unset 0.5em" name="advancedFilterButton" on-click="advancedFilterButtonClick($event, widget)" iconclass="wi wi-filter-none"></wm-button>
+                                        <wm-button class="btn-secondary" caption="Limpiar" type="button" margin="unset 0.8em unset 0.5em" name="clearButton" on-click="clearButtonClick($event, widget)" iconclass="wi wi-refresh"></wm-button>
+                                        <wm-button class="btn-primary" caption="Filtrar" type="button" margin="unset 0.5em" name="filterButton" on-click="filterButtonClick($event, widget)" iconclass="wi wi-filter-list"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                        <wm-table name="FacturasTable" title="" dataset="bind:Widgets.FacturasFilter.result" navigation="Basic" spacing="condensed" showrecordcount="true" deleteoktext="bind:appLocale.LABEL_OK" loadingdatamsg="bind:appLocale.MESSAGE_LOADING"
+                            nodatamessage="bind:appLocale.MESSAGE_NO_DATA" pagesize="10">
+                            <wm-table-column binding="idFactura" caption="Id Factura" edit-widget-type="number" type="integer" show="false" readonly="false"></wm-table-column>
+                            <wm-table-column binding="fechaFactura" caption="Fecha" width="20%" edit-widget-type="timestamp" type="timestamp" generator="assigned" datepattern="dd/MM/yyyy" formatpattern="toDate" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="numFactura" caption="Número" width="20%" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="idServicio" caption="Servicio" width="17%" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="clase" caption="Clase" width="12%" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="importe" caption="Importe" widget-type="label" width="15%" textalignment="right" edit-widget-type="number" type="big_decimal" generator="assigned" show="true" readonly="false">
+                                <wm-label caption="bind:App.formatCurrency(row.getProperty('importe'))" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                            </wm-table-column>
+                            <wm-table-column binding="espacio" caption="" edit-widget-type="text" type="string" searchable="false" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="rowOperations" caption="" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                            <wm-table-row-action key="customRow" display-name="" show="true" class="btn-transparent" iconclass="fa fa-file-pdf-o" title="Descagar PDF" action="Variables.downloadPdfVariable.invoke()" disabled="false" widget-type="button"></wm-table-row-action>
+                            <wm-table-row-action key="customRow1" display-name="" show="true" class="btn-transparent" iconclass="fa fa-file-excel-o" title="Descargar XML" action="Variables.downloadXMLVariable.invoke()" disabled="false"
+                                widget-type="button"></wm-table-row-action>
+                        </wm-table>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

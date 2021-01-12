@@ -1,0 +1,7 @@
+{
+  "id" : "logedUserInfo",
+  "type" : "JavaService",
+  "packageNames" : [ "es.tirea.wavemaker.consultaFacturas.logeduserinfo" ],
+  "serviceClassNames" : [ "es.tirea.wavemaker.consultaFacturas.logeduserinfo.LogedUserInfo" ],
+  "title" : "logedUserInfo"
+}

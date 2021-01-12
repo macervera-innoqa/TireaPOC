@@ -1,0 +1,47 @@
+<wm-page name="mainpage" pagetitle="Main">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
+    <wm-content name="content">
+        <wm-page-content columnwidth="12" name="mainContent" padding="unset 15px">
+            <wm-layoutgrid name="layoutgrid3">
+                <wm-gridrow name="gridrow9" padding="unset unset 2em unset">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn23" padding="unset 4em unset unset">
+                        <wm-container name="container3">
+                            <wm-panel iconclass="" autoclose="outsideClick" title="Información del usuario" name="userView" iconurl="bind:&quot;https://eu.ui-avatars.com/api/?background=37489C&amp;rounded=true&amp;size=128&amp;color=ffffff&amp;name=&quot; + Variables.loggedInUser.dataSet.name"
+                                iconwidth="90" iconheight="90" height="189" badgetype="default" collapsible="false" enablefullscreen="false" closable="false">
+                                <wm-label padding="1em 0.5em" name="label5" caption="bind:&quot;Usuario: &quot; " class="h3-changed"></wm-label>
+                                <wm-label padding="unset 1em" name="label3" caption="bind:Variables.loggedInUser.dataSet.name" class="h3-changed" margin="unset 4em unset unset"></wm-label>
+                                <wm-label padding="1em 0.5em" name="label5_1" class="h3-changed" caption="bind:&quot;Perfil: &quot;"></wm-label>
+                                <wm-label padding="unset 1em unset 2.2em" name="label6" caption="bind:Variables.loggedInUser.dataSet.roles[0]" class="h3-changed"></wm-label>
+                            </wm-panel>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn24">
+                        <wm-container name="container2" on-click="Actions.goToPage_ultimas_facturas.invoke()">
+                            <wm-table editmode="inline" name="ultimasFacturasView" title="Últimas facturas" dataset="bind:Variables.DESAFacturasTable.dataSet" navigation="None" spacing="condensed" nodatamessage="bind:appLocale.MESSAGE_NO_DATA" loadingdatamsg="bind:appLocale.MESSAGE_LOADING"
+                                class="pincharTabla" showindevice="all">
+                                <wm-table-column binding="fechaFactura" caption="Fecha" width="20%" edit-widget-type="timestamp" type="timestamp" generator="assigned" datepattern="dd/MM/yyyy" formatpattern="toDate" show="true" readonly="false" required="true"></wm-table-column>
+                                <wm-table-column binding="numFactura" caption="Número" width="20%" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
+                                <wm-table-column binding="idServicio" caption="Servicio" width="15%" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
+                                <wm-table-column binding="clase" caption="Clase" width="15%" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
+                                <wm-table-column binding="importe" caption="Importe" widget-type="label" width="10%" textalignment="right" edit-widget-type="number" type="big_decimal" generator="assigned" show="true" readonly="false"
+                                    required="true">
+                                    <wm-label caption="bind:App.formatCurrency(row.getProperty('importe'))" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                                </wm-table-column>
+                            </wm-table>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow10">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn25">
+                        <wm-container name="container2_1" on-click="Actions.goToPage_informe_facturas.invoke()">
+                            <wm-chart type="Area" title="Importes en millares" height="350px" iconclass="wi wi-euro-symbol" name="informesView" dataset="bind:Variables.informeView.dataSet" theme="Azure" nodatamessage="No hay datos disponibles." loadingdatamsg="bind:appLocale.MESSAGE_LOADING"
+                                showlegend="hide" highlightpoints="true" ynumberformat="Thousand" class="pincharTabla" show="true" xaxisdatakey="fechaFactura" yaxisdatakey="importe"></wm-chart>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+</wm-page>

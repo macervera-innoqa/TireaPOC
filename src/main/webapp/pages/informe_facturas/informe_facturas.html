@@ -1,0 +1,37 @@
+<wm-page pagetitle="Informe Facturas" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                        <wm-layoutgrid name="FilterGrid">
+                            <wm-gridrow name="gridrow6">
+                                <wm-gridcolumn columnwidth="5" name="gridcolumn9_1" horizontalalign="left">
+                                    <wm-composite name="Cliente" captionposition="left" horizontalalign="left">
+                                        <wm-label class="col-md-3 control-label" name="label3" caption="Cliente" padding="12px unset unset unset" fontsize="16"></wm-label>
+                                        <wm-container class="col-md-9" name="container3">
+                                            <wm-select name="select1" dataset="bind:Variables.userClientsVariable.dataSet" datafield="All Fields" datavalue="Todos" on-change="select1Change($event, widget, newVal, oldVal)"></wm-select>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="1" name="gridcolumn5"></wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn8_1">
+                                    <wm-switch datavalue="Último año" dataset="Últimos dos años, Último año, Últimos 6 meses" margin="unset unset 15px unset" name="DateSelectionSwitch" on-change="DateSelectionSwitchChange($event, widget, newVal, oldVal)"></wm-switch>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                        <wm-chart type="Area" title="Importes en millares" height="500px" iconclass="wi wi-euro-symbol" name="facturasChart" dataset="bind:Variables.facturaGraphVariable.dataSet" xaxisdatakey="fechaFactura" yaxisdatakey="importe" theme="Azure"
+                            highlightpoints="true" ynumberformat="Thousand" showlegend="hide" showyaxis="true" nodatamessage="No hay datos disponibles." loadingdatamsg="bind:appLocale.MESSAGE_LOADING"></wm-chart>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

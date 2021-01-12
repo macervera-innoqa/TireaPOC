@@ -1,0 +1,41 @@
+{
+  "username" : "facturae",
+  "password" : "7b6a43524a232c197f79757d1a5c783a172653",
+  "url" : "jdbc:db2://192.168.44.10:50021/DESA:progressiveStreaming=2;",
+  "driverClass" : "com.ibm.db2.jcc.DB2Driver",
+  "dialect" : "org.hibernate.dialect.DB2Dialect",
+  "serviceId" : "DESA",
+  "packageName" : "es.tirea.wavemaker.consultaFacturas.desa",
+  "dbType" : "DB2",
+  "host" : "192.168.44.10",
+  "dbName" : "DESA",
+  "port" : "50021",
+  "schemaName" : "FACTURAE",
+  "tableFilter" : [ {
+    "table" : "FACTURAS",
+    "schema" : "FACTURAE"
+  }, {
+    "table" : "FICH_PROCESADOS",
+    "schema" : "FACTURAE"
+  }, {
+    "table" : "RECEPTORES",
+    "schema" : "FACTURAE"
+  } ],
+  "schemaFilter" : [ "FACTURAE" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : true
+}

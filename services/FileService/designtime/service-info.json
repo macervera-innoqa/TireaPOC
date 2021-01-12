@@ -1,0 +1,7 @@
+{
+  "id" : "FileService",
+  "type" : "JavaService",
+  "packageNames" : [ "es.tirea.wavemaker.consultaFacturas.fileservice" ],
+  "serviceClassNames" : [ "es.tirea.wavemaker.consultaFacturas.fileservice.FileService" ],
+  "title" : "FileService"
+}

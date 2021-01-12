@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="facturasCliente">
+        <![CDATA[
+        SELECT ID_FACTURA, TO_CHAR(FECHA_FACTURA, 'DD/MM/YYYY')  AS FECHA_FACTURA, NUM_FACTURA, ID_SERVICIO, CLASE, IMPORTE  FROM FACTURAS WHERE ((NOT :all AND ID_CLIENTE IN (:idCliente)) OR :all) AND FECHA_FACTURA BETWEEN TO_DATE(:fechaIni, 'DD-MM-YYYY HH24:MI:SS') AND TO_DATE(:fechaFin, 'DD-MM-YYYY HH24:MI:SS') ORDER BY FACTURAS.FECHA_FACTURA DESC
+        ]]>
+    <query-param name="all" type="java.lang.Boolean"/>
+    <query-param name="idCliente" type="java.lang.String"/>
+    <query-param name="fechaIni" type="java.lang.String"/>
+    <query-param name="fechaFin" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="facturasCliente__count">
+        <![CDATA[
+        select count(*) from (SELECT ID_FACTURA, TO_CHAR(FECHA_FACTURA, 'DD/MM/YYYY')  AS FECHA_FACTURA, NUM_FACTURA, ID_SERVICIO, CLASE, IMPORTE  FROM FACTURAS WHERE ((NOT :all AND ID_CLIENTE IN (:idCliente)) OR :all) AND FECHA_FACTURA BETWEEN TO_DATE(:fechaIni, 'DD-MM-YYYY HH24:MI:SS') AND TO_DATE(:fechaFin, 'DD-MM-YYYY HH24:MI:SS') ORDER BY FACTURAS.FECHA_FACTURA DESC) wmTempTable
+        ]]>
+    <query-param name="all" type="java.lang.Boolean"/>
+    <query-param name="idCliente" type="java.lang.String"/>
+    <query-param name="fechaIni" type="java.lang.String"/>
+    <query-param name="fechaFin" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="allClients">
+        <![CDATA[
+        SELECT DISTINCT(ID_CLIENTE) FROM FACTURAS ORDER BY ID_CLIENTE
+        ]]>
+    </sql-query>
+
+    <sql-query name="allClients__count">
+        <![CDATA[
+        select count(*) from (SELECT DISTINCT(ID_CLIENTE) FROM FACTURAS ORDER BY ID_CLIENTE) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="facturaGraph">
+        <![CDATA[
+        SELECT CAST(SUM(IMPORTE) AS VARCHAR) AS IMPORTE, TO_CHAR(FECHA_FACTURA, 'DD-MM-YYYY')  AS FECHA_FACTURA  FROM FACTURAS WHERE ((NOT :all AND ID_CLIENTE IN (:idCliente)) OR :all) AND FECHA_FACTURA BETWEEN TO_DATE(:fechaIni, 'DD-MM-YYYY HH24:MI:SS') AND TO_DATE(:fechaFin, 'DD-MM-YYYY HH24:MI:SS') GROUP BY FECHA_FACTURA
+        ]]>
+    <query-param name="all" type="java.lang.Boolean"/>
+    <query-param name="idCliente" type="java.lang.String"/>
+    <query-param name="fechaIni" type="java.lang.String"/>
+    <query-param name="fechaFin" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="facturaGraph__count">
+        <![CDATA[
+        select count(*) from (SELECT CAST(SUM(IMPORTE) AS VARCHAR) AS IMPORTE, TO_CHAR(FECHA_FACTURA, 'DD-MM-YYYY')  AS FECHA_FACTURA  FROM FACTURAS WHERE ((NOT :all AND ID_CLIENTE IN (:idCliente)) OR :all) AND FECHA_FACTURA BETWEEN TO_DATE(:fechaIni, 'DD-MM-YYYY HH24:MI:SS') AND TO_DATE(:fechaFin, 'DD-MM-YYYY HH24:MI:SS') GROUP BY FECHA_FACTURA) wmTempTable
+        ]]>
+    <query-param name="all" type="java.lang.Boolean"/>
+    <query-param name="idCliente" type="java.lang.String"/>
+    <query-param name="fechaIni" type="java.lang.String"/>
+    <query-param name="fechaFin" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>
